@@ -55,7 +55,29 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   borderRadius: BorderRadius.circular(50)),
             ),
           ),
-
+          Padding(
+            padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
+            child: FlatButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterScreen()),
+                );
+              },
+              child: Text(
+                "Register",
+                style: TextStyle(color: Colors.white),
+              ),
+              color: Colors.blueAccent,
+              minWidth: MediaQuery.of(context).size.height,
+              shape: RoundedRectangleBorder(
+                  side: BorderSide(
+                      color: Colors.blueAccent,
+                      width: 1,
+                      style: BorderStyle.solid),
+                  borderRadius: BorderRadius.circular(50)),
+            ),
+          ),
         ],
       ),
     );
