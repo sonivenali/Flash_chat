@@ -11,7 +11,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
               "assets/image/logo.png",
@@ -28,7 +29,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   "Enter your email",
                   style: TextStyle(color: Colors.grey),
                 ),
-
                 minWidth: MediaQuery.of(context).size.height,
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
@@ -46,7 +46,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   "Enter your password",
                   style: TextStyle(color: Colors.grey),
                 ),
-
                 minWidth: MediaQuery.of(context).size.height,
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
@@ -57,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16,top: 30),
+              padding: const EdgeInsets.only(left: 16, right: 16, top: 30),
               child: FlatButton(
                 onPressed: () {
                   Navigator.push(
