@@ -1,17 +1,19 @@
-import 'package:flash_chat/chat_screen.dart';
+import 'package:flash_chat/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class RegisterScreen extends StatefulWidget {
+class LoginScreen extends StatefulWidget {
   @override
-  _RegisterScreenState createState() => _RegisterScreenState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
               "assets/image/logo.png",
@@ -28,7 +30,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   "Enter your email",
                   style: TextStyle(color: Colors.grey),
                 ),
-
                 minWidth: MediaQuery.of(context).size.height,
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
@@ -46,7 +47,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   "Enter your password",
                   style: TextStyle(color: Colors.grey),
                 ),
-
                 minWidth: MediaQuery.of(context).size.height,
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
@@ -57,7 +57,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16,top: 30),
+              padding: const EdgeInsets.only(left: 16, right: 16, top: 30),
               child: FlatButton(
                 onPressed: () {
                   Navigator.push(
@@ -66,10 +66,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   );
                 },
                 child: Text(
-                  "Register",
+                  "Log in",
                   style: TextStyle(color: Colors.white),
                 ),
-                color: Colors.blueAccent,
+                color: Colors.lightBlueAccent,
                 minWidth: MediaQuery.of(context).size.height,
                 shape: RoundedRectangleBorder(
                     side: BorderSide(
