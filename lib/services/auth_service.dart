@@ -13,4 +13,17 @@ class AuthService {
       return false;
     }
   }
+
+  Future<bool> signInWithEmailAndPassword(String email, String password) async {
+    try {
+      final User user = (await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      )).user;
+
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 }
