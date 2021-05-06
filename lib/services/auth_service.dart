@@ -19,7 +19,8 @@ class AuthService {
       final User user = (await _auth.signInWithEmailAndPassword(
         email: email,
         password: password,
-      )).user;
+      ))
+          .user;
 
       return true;
     } catch (e) {

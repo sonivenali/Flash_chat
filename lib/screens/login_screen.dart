@@ -1,4 +1,5 @@
 import 'package:flash_chat/screens/chat_screen.dart';
+import 'package:flash_chat/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -8,6 +9,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final authService = AuthService();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,41 +29,35 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16, right: 16),
-              child: FlatButton(
-                onPressed: () {},
-                child: Text(
-                  "Enter your email",
-                  style: TextStyle(color: Colors.grey),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.all(10),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: BorderSide(color: Colors.blue)
+                  ),
+                  hintText: "Enter your email",
                 ),
-                minWidth: MediaQuery.of(context).size.height,
-                shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                        color: Colors.lightBlueAccent,
-                        width: 1,
-                        style: BorderStyle.solid),
-                    borderRadius: BorderRadius.circular(50)),
-              ),
+
+              )
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16),
-              child: FlatButton(
-                onPressed: () {},
-                child: Text(
-                  "Enter your password",
-                  style: TextStyle(color: Colors.grey),
-                ),
-                minWidth: MediaQuery.of(context).size.height,
-                shape: RoundedRectangleBorder(
-                    side: BorderSide(
-                        color: Colors.lightBlueAccent,
-                        width: 1,
-                        style: BorderStyle.solid),
-                    borderRadius: BorderRadius.circular(50)),
-              ),
+                padding: const EdgeInsets.only(left: 16, right: 16,top: 16),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.all(10),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide(color: Colors.blue)
+                    ),
+                    hintText: "Enter your email",
+                  ),
+
+                )
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16, right: 16, top: 30),
-              child: FlatButton(
+              child: FlatButton(height:40,
                 onPressed: () {
                   Navigator.push(
                     context,
